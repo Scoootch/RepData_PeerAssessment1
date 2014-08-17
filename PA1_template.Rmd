@@ -50,13 +50,13 @@ for (i in 1:m){
 plot(intervals, spi, type="l")
 intervals_max <- intervals[which(spi==max(spi))]
 ```
-The most active interval is 'r intervals_max`.
+The most active interval is `r intervals_max`- `r intervals_max+5`.
 
 ## Imputing missing values
 ```{r}
 s <- sum(is.na(data$steps))
 ```
-There are `r s` NA values. There is no information about some days at all. I prefer to fill free places with average number of steps for corresponding interval. So if we have NA in the interval 220-225 i would like to see there average number of steps for 220-225 interval through other days. This filling should not change mean of the distribution.
+There are `r s` NA values. There is no information about some days at all. I prefer to fill free places with average number of steps for corresponding interval. So if we have NA in the interval 220-225 i would like to see there average number of steps for 220-225 interval through other days. This filling will not change mean of the distribution.
 
 ```{r}
 for (i in 1:m){
@@ -81,7 +81,7 @@ The distribution changed a bit. There are more days with average number of steps
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-There is a nice functions isWeekday() and isWeekend() in the package "timeDate". Let's use it (we should install it first). Factor variable name is "wd". I need also other two packages "grid" and "gridExtra" to plot two graphs on one page.
+There is a nice functions isWeekday() and isWeekend() in the package "timeDate". Let's use them (we should install it first). Factor variable name is "wd". I need also other two packages "grid" and "gridExtra" to plot two graphs on one page.
 ```{r}
 #install.packages("timeDate")
 #install.packages("grid")
